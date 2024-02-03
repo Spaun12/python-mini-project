@@ -14,7 +14,7 @@ green = (0, 255, 0)
 
 # Game window dimensions
 display_width = 600
-display_height = 400  # Adjusted to 400 for better gameplay area
+display_height = 400  # Michael D. Connell Jr. Adjusted to 400 for better gameplay area
 
 # Set up display
 display = pygame.display.set_mode((display_width, display_height))
@@ -49,7 +49,7 @@ def message(msg, color, y_displace=0, font_size=35):
 def game_intro():
     intro = True
     while intro:
-        for event in pygame.event.get():
+        for event in pygame.event.get(): # Michael D. Connell Jr. - Added event handling for the intro screen
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
@@ -105,22 +105,22 @@ def gameLoop():
     while not game_over:
 
         while game_close:
-            game_over_screen(Length_of_snake - 1)  # Show the game over screen
+            game_over_screen(Length_of_snake - 1)  # Michael D. Connell Jr added Show the game over screen  
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 game_over = True
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT and x1_change == 0:
+                if event.key == pygame.K_LEFT and x1_change == 0: # Michael D. Connell Jr. - Added event handling for the arrow keys
                     x1_change = -snake_block
                     y1_change = 0
-                elif event.key == pygame.K_RIGHT and x1_change == 0:
+                elif event.key == pygame.K_RIGHT and x1_change == 0: # Michael D. Connell Jr. - Added event handling for the arrow keys
                     x1_change = snake_block
                     y1_change = 0
-                elif event.key == pygame.K_UP and y1_change == 0:
+                elif event.key == pygame.K_UP and y1_change == 0:   # Michael D. Connell Jr. - Added event handling for the arrow keys
                     y1_change = -snake_block
                     x1_change = 0
-                elif event.key == pygame.K_DOWN and y1_change == 0:
+                elif event.key == pygame.K_DOWN and y1_change == 0: # Michael D. Connell Jr. - Added event handling for the arrow keys
                     y1_change = snake_block
                     x1_change = 0
 
